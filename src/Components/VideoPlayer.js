@@ -38,7 +38,7 @@ const VideoPlayer = () => {
   };
 
   let captionInterval = end - start;
-  let delay = 50; 
+  let delay  
 
   if (currentCaption && start !== null && end !== null) {
     const textLength = currentCaption.length;
@@ -60,6 +60,7 @@ const VideoPlayer = () => {
       <div className="captions">
         {currentCaption && (
           <Typewriter
+            style={{display :'inline-block' ,whiteSpace :'nowrap', animation : `marquee ${delay} linear infinite `}}
             text={currentCaption}
             isPlaying={isPlaying}
             delay={delay}
